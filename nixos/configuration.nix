@@ -3,27 +3,30 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
       ./gm/HW/vp.nix
-      ./gm/pkgs/flks.nix
+      ./gm/pkgs
       ./gm/WM/wayf.nix      
       ./gm/fltp/fltp.nix
-      ./gm/pkgs/ffox.nix
-      ./gm/pkgs/thunar.nix
+      ./gm/scy/doas.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
+  # Set kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "Cheshire"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  # Network
+  networking.hostName = "Cheshire"; 
+  networking.wireless.iwd.enable = true;
+  networking.wireless.iwd.settings = {Settings = {AutoConnect = true;};};
+  # networking.networkmanager.enable = true;  
   services.seatd.enable = true;
-  # Set your time zone.
+
+  # Set time zone.
   time.timeZone = "America/Maceio";
 
   # Locales
@@ -62,30 +65,17 @@
   users.users.deive = {
     isNormalUser = true;
     description = "deive";
-    extraGroups = ["networkmanager" "wheel" "seat"];
+    extraGroups = ["networkmanager" "wheel" "seat" "video"];
     packages = with pkgs; [];
   };
 
-  environment.systemPackages = with pkgs; [
-  helix
-  ffmpeg
-  emacs
-  nixd
-  nil
-  wget
-  polkit_gnome
-  appimage-run
-  ];
-
+  # Shell
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-  
-  # Seila
-  services.logind = {
-  lidSwitch = "ignore";  
-  lidSwitchDocked = "ignore";
- };
 
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05"; # Did you read the comment?
+  # Logind
+  services.logind.lidSwitch = "ignore";
+  
+  # System state 
+  system.stateVersion = "25.05";
 }
