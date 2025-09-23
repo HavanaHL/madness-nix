@@ -4,9 +4,6 @@
 ![Home Manager](https://img.shields.io/badge/Home%20Manager-blue?logo=nix&logoColor=white)
 ![Flakes](https://img.shields.io/badge/Flakes-5E81AC?logo=snowflake&logoColor=white)
 ![Lix](https://img.shields.io/badge/Lix-FF5C8D?logo=nixos&logoColor=white&labelColor=000000)
-![Zsh](https://img.shields.io/badge/Shell-Zsh-4EAA25?logo=zsh&logoColor=white)
-![BusyBox](https://img.shields.io/badge/BusyBox-555555?logo=linux&logoColor=white)
-![Wayfire](https://img.shields.io/badge/Wayfire-FFA500?logo=wayland&logoColor=white)
 
 My **source files** for my current *NixOS* system, with several changes and additions that you probably don't need.
 
