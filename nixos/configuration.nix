@@ -1,4 +1,4 @@
-# ~ λ 
+# ~ λ Madness NixOS
 { config, lib, pkgs, ... }:
 
 {
@@ -53,12 +53,11 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
+  hardware.firmware = [pkgs.sof-firmware];
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+    # pulse.enable = true;
   };
 
   # Define a user account. 
@@ -74,7 +73,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   # Logind
-  services.logind.lidSwitch = "ignore";
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
   
   # System state 
   system.stateVersion = "25.05";

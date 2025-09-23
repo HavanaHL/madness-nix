@@ -1,6 +1,6 @@
 {
   
- description = "λ";
+ description = "~ λ A simple flakes, huh?";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable"; 

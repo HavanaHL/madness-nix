@@ -10,7 +10,8 @@
    strawberry
    mpv
    smplayer
-
+   wf-recorder
+   
  # Accessories
    copyq
    dunst
@@ -26,13 +27,16 @@
    mate.engrampa
    waypaper
    xfce.xfce4-panel
+   alacritty
+
  # Graphics
    gimp3
    audacity
 
  # Jogos
    lutris
-
+   hydralauncher
+   wine-staging
  ];
   
 }

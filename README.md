@@ -21,7 +21,8 @@ My **source files** for my current *NixOS* system, with several changes and addi
 
 ## ❄️ | Structure (23/09/25)
 ```bash
-.
+~ λ tree /etc/nixos
+/etc/nixos
 ├── configuration.nix
 ├── flake.lock
 ├── flake.nix
@@ -42,6 +43,8 @@ My **source files** for my current *NixOS* system, with several changes and addi
 │       └── doas.nix
 ├── hardware-configuration.nix
 ├── hm
+│   ├── env
+│   │   └── dft.nix
 │   ├── git
 │   │   └── git.nix
 │   ├── pkgs
@@ -49,5 +52,6 @@ My **source files** for my current *NixOS* system, with several changes and addi
 │   │   │   └── fonts.nix
 │   │   └── pkgs.nix
 │   └── shell
+│       └── zsh.nix
 └── home.nix
 ``` 
