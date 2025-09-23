@@ -1,7 +1,7 @@
 # λ | Madness Nix - NixOS + "Why would anyone use this?"
 
 ![NixOS](https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=white)
-![Home Manager](https://img.shields.io/badge/Home%20Manager-blue?logo=nix&logoColor=white)
+![Home Manager](https://img.shields.io/badge/Home%20Manager-blue?logo=homeadvisor&logoColor=white)
 
 ![Flakes](https://img.shields.io/badge/Flakes-5E81AC?logo=snowflake&logoColor=white)
 ![Lix](https://img.shields.io/badge/Lix-FF5C8D?logo=nixos&logoColor=white&labelColor=000000)
