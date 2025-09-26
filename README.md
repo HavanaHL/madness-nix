@@ -4,7 +4,7 @@
 ![Home Manager](https://img.shields.io/badge/Home%20Manager-blue?logo=homeadvisor&logoColor=white)
 
 ![Flakes](https://img.shields.io/badge/Flakes-5E81AC?logo=nixos&logoColor=white)
-![Lix](https://img.shields.io/badge/Lix-FF5C8D?logo=nixos&logoColor=black&labelColor=FF5C8D)
+![Lix](https://img.shields.io/badge/Lix-FF5C8D?logo=nixos&logoColor=white&labelColor=FF5C8D)
 
 My **source files** for my current *NixOS* system, with several changes and additions that you probably don't need.
 
