@@ -4,14 +4,14 @@
  # Internet
    discord
    telegram-desktop
+   webcord
 
  # Media
-   youtube-music
    strawberry
    mpv
    smplayer
    wf-recorder
-   
+     
  # Accessories
    copyq
    dunst
@@ -29,14 +29,17 @@
    xfce.xfce4-panel
    alacritty
 
+ # Text Editor
+   helix
+   emacs
+   
  # Graphics
    gimp3
    audacity
 
  # Jogos
    lutris
-   hydralauncher
-   wine-staging
+   heroic
  ];
-  
+
 }

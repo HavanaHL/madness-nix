@@ -1,8 +1,7 @@
-{config, pkgs, ...}: {
-
-nixpkgs.config.packageOverrides = pkgs: {
- intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
-};
+{config, pkgs, ...}:
+{
+ nixpkgs.config.packageOverrides = pkgs: {intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};};
+ services.xserver.videoDrivers = [ "intel" ];
 
  hardware.graphics = {
    enable = true;
@@ -10,6 +9,7 @@ nixpkgs.config.packageOverrides = pkgs: {
    extraPackages = with pkgs; [
      intel-vaapi-driver # i965 
      libvdpau-va-gl
+     mesa
    ];
  };
 

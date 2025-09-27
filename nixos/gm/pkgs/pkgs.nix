@@ -4,8 +4,6 @@
 
  environment.systemPackages = with pkgs; [
   # Text editor
-  helix
-  emacs
   nixd
   nil
   
@@ -14,7 +12,15 @@
   wget
   polkit_gnome
   appimage-run
-  (pkgs.busybox.override {enableAppletSymlinks = true;})
-];
+  wineWowPackages.stagingFull
+  winetricks
 
+  # Audio
+  playerctl
+
+];
+ programs = {
+  nano.enable = false;
+
+ };
 }

@@ -10,20 +10,22 @@
       ./gm/WM/wayf.nix      
       ./gm/fltp/fltp.nix
       ./gm/scy/doas.nix
+      ./gm/genv/var.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
+  # Boot
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.tmp.useTmpfs = true;
+  # services.preload.enable = true;
 
   # Set kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
 
   # Network
   networking.hostName = "Cheshire"; 
   networking.wireless.iwd.enable = true;
   networking.wireless.iwd.settings = {Settings = {AutoConnect = true;};};
-  # networking.networkmanager.enable = true;  
   services.seatd.enable = true;
 
   # Set time zone.
@@ -57,7 +59,7 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    # pulse.enable = true;
+    pulse.enable = true;
   };
 
   # Define a user account. 

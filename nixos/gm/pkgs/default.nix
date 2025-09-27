@@ -4,5 +4,6 @@
   ./flks.nix
   ./thunar.nix
   ./pkgs.nix
+  # ./busybox.nix
  ]; 
 }
