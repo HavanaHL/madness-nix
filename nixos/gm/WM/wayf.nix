@@ -2,6 +2,7 @@
 
   programs.wayfire = {
   enable = true;
+  xwayland.enable = true;
   plugins = with pkgs.wayfirePlugins; [
     wcm
     wayfire-plugins-extra
@@ -10,7 +11,6 @@
 
   environment.systemPackages = with pkgs; [
     fuzzel
-    foot
     zellij
     nwg-look
     grim

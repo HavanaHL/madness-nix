@@ -4,14 +4,14 @@
  # Internet
    discord
    telegram-desktop
-   webcord
+   vivaldi
+   vivaldi-ffmpeg-codecs
 
  # Media
-   strawberry
+   audacious
    mpv
-   smplayer
-   wf-recorder
-     
+   youtube-music
+   
  # Accessories
    copyq
    dunst
@@ -24,22 +24,28 @@
    btop
    pavucontrol
    playerctl
-   mate.engrampa
-   waypaper
    xfce.xfce4-panel
+   xfce.xfce4-whiskermenu-plugin
+   xfce.xfce4-pulseaudio-plugin
+   xfce.xfconf
    alacritty
+   xarchiver
 
  # Text Editor
    helix
-   emacs
    
  # Graphics
    gimp3
-   audacity
+   inkscape
 
- # Jogos
+ # Games
    lutris
    heroic
  ];
+
+  programs.nh = {
+    enable = true;
+    flake =  "/etc/nixos";
+  };
 
 }

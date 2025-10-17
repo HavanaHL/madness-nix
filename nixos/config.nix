@@ -8,16 +8,27 @@
       ./gm/HW/vp.nix
       ./gm/pkgs
       ./gm/WM/wayf.nix      
+      ./gm/WM/sway.nix
       ./gm/fltp/fltp.nix
       ./gm/scy/doas.nix
       ./gm/genv/var.nix
+      ./gm/HW/pipewire.nix
+      ./gm/poweruser/cpu.nix
     ];
 
   # Boot
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+
+    grub = {
+      efiSupport = true;
+      device = "nodev";
+    };
+  };
   boot.tmp.useTmpfs = true;
-  # services.preload.enable = true;
 
   # Set kernel.
   boot.kernelPackages = pkgs.linuxPackages_xanmod;
@@ -52,21 +63,12 @@
 
   # Configure console keymap
   console.keyMap = "br-abnt2";
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  hardware.firmware = [pkgs.sof-firmware];
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
+ 
   # Define a user account. 
   users.users.deive = {
     isNormalUser = true;
     description = "deive";
-    extraGroups = ["networkmanager" "wheel" "seat" "video"];
+    extraGroups = [ "wheel" "seat" "video" ];
     packages = with pkgs; [];
   };
 
