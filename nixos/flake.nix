@@ -13,7 +13,7 @@
    nixosConfigurations = {
      "Cheshire" = nixpkgs.lib.nixosSystem {
        specialArgs = {inherit inputs;};
-       system = "x86_64-linx";
+       system = "x86_64-linux";
        modules = [ ./config.nix ];
      };
    }; 

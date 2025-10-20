@@ -1,34 +1,29 @@
 # ~ λ Madness NixOS
 { config, lib, pkgs, ... }:
-
 {
   imports =
     [ 
-      ./hardware-configuration.nix
+      ./gm/HW/hc.nix
       ./gm/HW/vp.nix
       ./gm/pkgs
       ./gm/WM/wayf.nix      
-      ./gm/WM/sway.nix
       ./gm/fltp/fltp.nix
       ./gm/scy/doas.nix
-      ./gm/genv/var.nix
       ./gm/HW/pipewire.nix
-      ./gm/poweruser/cpu.nix
+      ./gm/powerpills/cpu.nix
+      ./gm/HW/swap.nix
+      ./gm/powerpills/preload.nix
     ];
 
   # Boot
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
-    };
-
-    grub = {
-      efiSupport = true;
-      device = "nodev";
-    };
-  };
-  boot.tmp.useTmpfs = true;
+    # efi
+    boot.loader.efi.canTouchEfiVariables = true; 
+    boot.loader.efi.efiSysMountPoint = "/boot/efi";
+    # grub
+    boot.loader.grub.efiSupport = true;
+    boot.loader.grub.device = "nodev";
+    # Tmpfs
+    boot.tmp.useTmpfs = true;
 
   # Set kernel.
   boot.kernelPackages = pkgs.linuxPackages_xanmod;
@@ -37,7 +32,6 @@
   networking.hostName = "Cheshire"; 
   networking.wireless.iwd.enable = true;
   networking.wireless.iwd.settings = {Settings = {AutoConnect = true;};};
-  services.seatd.enable = true;
 
   # Set time zone.
   time.timeZone = "America/Maceio";
@@ -56,21 +50,20 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
- # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "br";
-  };
+  # Configure keymap in X11
+  services.xserver.xkb.layout = "br"; 
 
   # Configure console keymap
   console.keyMap = "br-abnt2";
  
-  # Define a user account. 
+  # User account 
   users.users.deive = {
     isNormalUser = true;
     description = "deive";
     extraGroups = [ "wheel" "seat" "video" ];
     packages = with pkgs; [];
   };
+  services.seatd.enable = true;
 
   # Shell
   programs.zsh.enable = true;
@@ -78,7 +71,10 @@
 
   # Logind
   services.logind.settings.Login.HandleLidSwitch = "ignore";
-  
+
+  # Security
+  security.polkit.enable = true;  
+
   # System state 
   system.stateVersion = "25.05";
 }

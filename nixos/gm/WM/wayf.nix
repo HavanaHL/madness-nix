@@ -18,6 +18,7 @@
     swaybg
     wl-clipboard
     swappy
+    waybar
   ];
   
 }

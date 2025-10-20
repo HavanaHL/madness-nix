@@ -56,3 +56,34 @@ My **source files** for my current *NixOS* system, with several changes and addi
 │       └── zsh.nix
 └── home.nix
 ``` 
+
+<details>
+  <summary>gm/</summary>
+
+  **Global Modules**
+  ```/etc/nixos/gm
+├── fltp
+│   └── fltp.nix
+├── genv
+│   └── var.nix
+├── HW
+│   ├── hc.nix
+│   ├── pipewire.nix
+│   └── vp.nix
+├── pkgs
+│   ├── busybox.nix
+│   ├── default.nix
+│   ├── ffox.nix
+│   ├── flks.nix
+│   ├── pkgs.nix
+│   └── thunar.nix
+├── poweruser
+│   └── cpu.nix
+├── scy
+│   └── doas.nix
+└── WM
+    ├── niri.nix
+    ├── sway.nix
+    └── wayf.nix
+```
+</details>
