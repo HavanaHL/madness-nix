@@ -54,7 +54,15 @@
    heroic
    steam-run
    steam
-   
+
+ # WM things
+   fuzzel
+   grim
+   slurp
+   swaybg
+   wl-clipboard-rs
+   swappy
+   waybar   
  ];
 
   programs.nh = {
