@@ -1,4 +1,4 @@
-{config, ...}:
+{config, self, ...}:
 {
   imports = [
    ./hm/pkgs/fonts/fonts.nix
@@ -7,6 +7,7 @@
    ./hm/look/gui.nix
    ./hm/env/dft.nix
    ./hm/env/var.nix
+   ./hm/overlays
   ];
 
   home.username = "deive";

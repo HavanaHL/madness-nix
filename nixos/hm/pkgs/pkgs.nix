@@ -7,6 +7,8 @@
    equibop
    librewolf-bin
    (vivaldi.override {proprietaryCodecs = true;})
+   bitwarden-desktop
+   epiphany
 
  # Media
    audacious
@@ -17,6 +19,7 @@
    ffmpeg-full
    
  # Accessories
+   rio
    copyq
    dunst
    libnotify
@@ -37,6 +40,7 @@
    i3status
    kdePackages.kdeconnect-kde
    git
+   zellij
    
  # Text Editor
    helix

@@ -11,7 +11,6 @@
 
   environment.systemPackages = with pkgs; [
     fuzzel
-    zellij
     nwg-look
     grim
     slurp    
