@@ -100,25 +100,3 @@ My **source files** for my current *NixOS* system, with several changes and addi
 
 8 directories, 16 files```
 </details>
-
-<details>
-  <summary>hm/</summary>
-  **Home Modules**
-  ```~ λ tree /etc/nixos/hm
-/etc/nixos/hm
-├── env
-│   ├── dft.nix
-│   └── var.nix
-├── look
-│   └── gui.nix
-├── overlays
-│   ├── default.nix
-│   └── zellij-0.nix
-├── pkgs
-│   ├── fonts
-│   │   └── fonts.nix
-│   └── pkgs.nix
-└── shell
-    └── zsh.nix
-
-7 directories, 8 files```
