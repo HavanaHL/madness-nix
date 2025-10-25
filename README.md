@@ -99,4 +99,4 @@ My **source files** for my current *NixOS* system, with several changes and addi
     └── wayf.nix
 
 8 directories, 16 files```
-</details>
+
