@@ -22,38 +22,49 @@ My **source files** for my current *NixOS* system, with several changes and addi
 
 ## ❄️ | Structure (23/09/25)
 ```bash
-~ λ tree /etc/nixos
 /etc/nixos
-├── configuration.nix
+├── config.nix
 ├── flake.lock
 ├── flake.nix
 ├── gm
-│   ├── HW
-│   │   └── vp.nix
-│   ├── WM
-│   │   └── wayf.nix
-│   ├── fltp
-│   │   └── fltp.nix
-│   ├── pkgs
-│   │   ├── default.nix
-│   │   ├── ffox.nix
-│   │   ├── flks.nix
-│   │   ├── pkgs.nix
-│   │   └── thunar.nix
-│   └── scy
-│       └── doas.nix
-├── hardware-configuration.nix
+│   ├── fltp
+│   │   └── fltp.nix
+│   ├── HW
+│   │   ├── hc.nix
+│   │   ├── pipewire.nix
+│   │   ├── swap.nix
+│   │   └── vp.nix
+│   ├── pkgs
+│   │   ├── default.nix
+│   │   ├── ffox.nix
+│   │   ├── flks.nix
+│   │   ├── pkgs.nix
+│   │   └── thunar.nix
+│   ├── powerpills
+│   │   ├── cpu.nix
+│   │   ├── overlays
+│   │   │   ├── default.nix
+│   │   │   └── mesa.nix
+│   │   └── preload.nix
+│   ├── scy
+│   │   └── doas.nix
+│   └── WM
+│       └── wayf.nix
 ├── hm
-│   ├── env
-│   │   └── dft.nix
-│   ├── git
-│   │   └── git.nix
-│   ├── pkgs
-│   │   ├── fonts
-│   │   │   └── fonts.nix
-│   │   └── pkgs.nix
-│   └── shell
-│       └── zsh.nix
+│   ├── env
+│   │   ├── dft.nix
+│   │   └── var.nix
+│   ├── look
+│   │   └── gui.nix
+│   ├── overlays
+│   │   ├── default.nix
+│   │   └── zellij-0.nix
+│   ├── pkgs
+│   │   ├── fonts
+│   │   │   └── fonts.nix
+│   │   └── pkgs.nix
+│   └── shell
+│       └── zsh.nix
 └── home.nix
 ``` 
 
@@ -61,29 +72,53 @@ My **source files** for my current *NixOS* system, with several changes and addi
   <summary>gm/</summary>
 
   **Global Modules**
-  ```/etc/nixos/gm
+  ```~ λ tree /etc/nixos/gm
+/etc/nixos/gm
 ├── fltp
 │   └── fltp.nix
-├── genv
-│   └── var.nix
 ├── HW
 │   ├── hc.nix
 │   ├── pipewire.nix
+│   ├── swap.nix
 │   └── vp.nix
 ├── pkgs
-│   ├── busybox.nix
 │   ├── default.nix
 │   ├── ffox.nix
 │   ├── flks.nix
 │   ├── pkgs.nix
 │   └── thunar.nix
-├── poweruser
-│   └── cpu.nix
+├── powerpills
+│   ├── cpu.nix
+│   ├── overlays
+│   │   ├── default.nix
+│   │   └── mesa.nix
+│   └── preload.nix
 ├── scy
 │   └── doas.nix
 └── WM
-    ├── niri.nix
-    ├── sway.nix
     └── wayf.nix
-```
+
+8 directories, 16 files```
 </details>
+
+<details>
+  <summary>hm/</summary>
+  **Home Modules**
+  ```~ λ tree /etc/nixos/hm
+/etc/nixos/hm
+├── env
+│   ├── dft.nix
+│   └── var.nix
+├── look
+│   └── gui.nix
+├── overlays
+│   ├── default.nix
+│   └── zellij-0.nix
+├── pkgs
+│   ├── fonts
+│   │   └── fonts.nix
+│   └── pkgs.nix
+└── shell
+    └── zsh.nix
+
+7 directories, 8 files```
