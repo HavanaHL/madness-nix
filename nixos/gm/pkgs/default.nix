@@ -1,7 +1,7 @@
 {config, ...}:
 {
  imports = [
-  ./ffox.nix
+  # ./ffox.nix
   ./flks.nix
   ./thunar.nix
   ./pkgs.nix

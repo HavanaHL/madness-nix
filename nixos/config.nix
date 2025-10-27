@@ -3,16 +3,17 @@
 {
   imports =
     [ 
-      ./gm/HW/hc.nix
-      ./gm/HW/vp.nix
+      ./gm/hw/hc.nix
+      ./gm/hw/vp.nix
       ./gm/pkgs
-      ./gm/WM/wayf.nix      
+      ./gm/ui/wayf.nix      
       ./gm/fltp/fltp.nix
       ./gm/scy/doas.nix
-      ./gm/HW/pipewire.nix
+      ./gm/hw/pipewire.nix
       ./gm/powerpills/cpu.nix
-      ./gm/HW/swap.nix
+      ./gm/hw/swap.nix
       ./gm/powerpills/preload.nix
+      ./gm/scy/dns.nix
     ];
 
   # Boot

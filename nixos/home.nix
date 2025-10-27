@@ -7,7 +7,7 @@
    ./hm/look/gui.nix
    ./hm/env/dft.nix
    ./hm/env/var.nix
-   ./hm/overlays
+   ./hm/pkgs/busybox   
   ];
 
   home.username = "deive";

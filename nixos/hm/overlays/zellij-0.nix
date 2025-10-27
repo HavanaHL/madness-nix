@@ -1,14 +1,12 @@
 # ~ λ
-self: super: oldAttrs: {
+self: super: {
 
   # Overwrite the zellij package
   zellij = super.zellij.overrideAttrs (oldAttrs: {
-    env = oldAttrs.env or {} // {
-      RUSTFLAGS = oldAttrs.env.RUSTFLAGS or "" + builtins.toString [
-        "-C target-cpu=silvermont"
-        "-C opt-level=3"
-      ];
-    };
+
+    # preConfigure 
+    preConfigure = (oldAttrs.preConfigure or "") + ''
+      export RUSTFLAGS="$RUSTFLAGS -C target-cpu=silvermont -C opt-level=3"
+      '';
   });
 }
-
