@@ -1,0 +1,12 @@
+{config, pkgs, ...}:
+{
+  home.packages = with pkgs.xfce; [
+   xfce4-panel
+   xfce4-pulseaudio-plugin
+   xfce4-whiskermenu-plugin
+   xfconf
+   garcon
+   libxfce4util
+   libxfce4windowing    
+  ]; 
+}

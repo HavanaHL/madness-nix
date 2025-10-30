@@ -11,8 +11,6 @@
   ffmpeg
   wget
   appimage-run
-  wineWowPackages.stagingFull
-  winetricks
   mate.mate-polkit
 
   # Audio

@@ -1,13 +1,11 @@
 {config, self, ...}:
 {
   imports = [
-   ./hm/pkgs/fonts/fonts.nix
-   ./hm/pkgs/pkgs.nix  
+   ./hm/pkgs  
    ./hm/shell/zsh.nix
    ./hm/look/gui.nix
    ./hm/env/dft.nix
    ./hm/env/var.nix
-   ./hm/pkgs/busybox   
   ];
 
   home.username = "deive";

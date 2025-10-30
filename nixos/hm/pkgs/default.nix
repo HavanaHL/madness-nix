@@ -17,6 +17,7 @@
    ffmpeg-full
    
  # Accessories
+   ncpamixer
    dunst
    libnotify
    peazip
@@ -45,7 +46,10 @@
    heroic
    steam-run
    steam
-
+   hydralauncher
+   wineWowPackages.stagingFull
+   winetricks
+   
  # WM things
    fuzzel
    grim
@@ -54,7 +58,9 @@
    wl-clipboard-rs
    swappy
    waybar   
- ];
+  ];
+
+  imports = [ ./extra ./fonts ];
 
   programs.nh = {
     enable = true;
