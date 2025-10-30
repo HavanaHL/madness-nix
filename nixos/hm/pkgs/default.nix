@@ -60,10 +60,6 @@
    waybar   
   ];
 
-  imports = [ ./extra ./fonts ];
+  imports = [ ./extra ./fonts ./busybox ];
 
-  programs.nh = {
-    enable = true;
-    flake =  "/etc/nixos";
-  };
 }

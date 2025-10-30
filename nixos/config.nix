@@ -63,9 +63,8 @@
     isNormalUser = true;
     description = "deive";
     extraGroups = [ "wheel" "seat" "video" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ tree ];
   };
-  services.seatd.enable = true;
 
   # Shell
   programs.zsh.enable = true;
@@ -76,7 +75,8 @@
 
   # Security
   security.polkit.enable = true;  
-
+  services.seatd.enable = true;
+  
   # System state 
   system.stateVersion = "25.05";
 }

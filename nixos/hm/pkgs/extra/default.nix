@@ -9,4 +9,10 @@
    libxfce4util
    libxfce4windowing    
   ]; 
+
+  programs.nh = {
+    enable = true;
+    flake =  "/etc/nixos";
+  };
 }
+
