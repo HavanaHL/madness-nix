@@ -1,13 +1,13 @@
 {config, pkgs, ...}:
 {
   services.xserver = {
-    enable = true;
+    enable = false;
     displayManager = {
       lightdm.enable = false;
     };
     desktopManager.mate = {
-      enable = true;
-      enableWaylandSession = true;
+      enable = false;
+      enableWaylandSession = false;
     };
   };
   environment.mate.excludePackages = with pkgs; [

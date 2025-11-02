@@ -1,7 +1,7 @@
 {config, pkgs, ...}:
 {
  # nixpkgs.config.packageOverrides = pkgs: {intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};};
- services.xserver.videoDrivers = [ "intel" ];
+ services.xserver.videoDrivers = [ "modesetting" ];
 
 hardware.graphics = {
   enable = true;

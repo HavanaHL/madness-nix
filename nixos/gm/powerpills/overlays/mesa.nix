@@ -1,14 +1,35 @@
 # ~ λ
-self: super: oldAttrs: {
+self: super: {
 
-  # Overwrite the zellij package
-  mesa = super.mesa.overrideAttrs (oldAttrs: {
-    env = oldAttrs.env or {} // {
-      CC = oldAttrs.env.CC or "" + builtins.toString [ "gcc" ];
-      CXX = oldAttrs.env.CXX or "" + builtins.toString [ "g++" ];
-      CFLAGS = oldAttrs.env.CFLAGS or "" + builtins.toString [ "-march-silvermont" "-O3" ];
-      CXXFLAGS = oldAttrs.env.CXXFLAGS or "" + builtins.toString [ "-march-silvermont" "-O3" ];      
-    };
-  });
+ # Overlay the Mesa package
+ mesa = (super.mesa.override {
+  # Customize
+  galliumDrivers = [ "crocus" "llvmpipe" "d3d12" ];
+  vulkanDrivers = [ "intel" ];
+  withValgrind = false;
+}).overrideAttrs (prevAttrs: {
+  depsBuildBuild =
+    super.lib.remove super.buildPackages.stdenv.cc prevAttrs.depsBuildBuild
+    ++ [super.buildPackages.llvmPackages.clang];
+
+  mesonBuildType = "release";
+  # Optimizations
+  mesonFlags = prevAttrs.mesonFlags ++ [
+    (super.lib.mesonOption "c_args" "-O3 -pipe -march=silvermont -mtune=silvermont")
+    (super.lib.mesonOption "cpp_args" "-O3 -pipe -march=silvermont -mtune=silvermont")
+    
+    # Compile Options
+    (super.lib.mesonBool "gallium-rusticl" false)
+    (super.lib.mesonBool "gallium-extra-hud" false)
+    (super.lib.mesonBool "install-mesa-clc" true)
+    (super.lib.mesonBool "install-precomp-compiler" false)
+    # Hardware Acceleration
+    (super.lib.mesonEnable "gallium-va" true)
+    (super.lib.mesonEnable "gallium-vdpau" false)
+
+  ];
+
+  outputs = ["out"];
+  postInstall = "";
+});
 }
-

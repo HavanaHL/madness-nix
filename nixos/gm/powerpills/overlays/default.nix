@@ -1,4 +1,4 @@
-{config, self, pkgs, ...}:
+{config, ...}:
 {
   nixpkgs.overlays = [
     ( import ./mesa.nix )

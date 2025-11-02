@@ -1,5 +1,5 @@
 # ~ λ Madness NixOS
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, super, ... }:
 {
   imports =
     [ 
@@ -14,7 +14,8 @@
       ./gm/hw/swap.nix
       ./gm/powerpills/preload.nix
       ./gm/scy/dns.nix
-      ./gm/ui/mate.nix
+      ./gm/ui/xfce.nix
+      ./gm/powerpills/overlays
     ];
 
   # Boot
