@@ -14,7 +14,7 @@
       ./gm/hw/swap.nix
       ./gm/powerpills/preload.nix
       ./gm/scy/dns.nix
-      ./gm/ui/xfce4.nix
+      ./gm/ui/mate.nix
     ];
 
   # Boot

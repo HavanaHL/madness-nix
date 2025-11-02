@@ -34,7 +34,6 @@
    zellij
    
  # Text Editor
-   helix
    emacs-pgtk
    
  # Graphics

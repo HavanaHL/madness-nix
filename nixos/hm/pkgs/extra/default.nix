@@ -1,5 +1,6 @@
-{config, pkgs, ...}:
+{config, pkgs, lib, ...}:
 {
+  imports = [./helix.nix];
   home.packages = with pkgs.xfce; [
    xfce4-panel
    xfce4-pulseaudio-plugin
@@ -9,8 +10,8 @@
    libxfce4util
    libxfce4windowing    
   ]; 
-
-  programs.nh = {
+  
+    programs.nh = {
     enable = true;
     flake =  "/etc/nixos";
   };
