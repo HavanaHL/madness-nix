@@ -1,5 +1,5 @@
 # ~ λ Madness NixOS
-{ config, lib, pkgs, super, ... }:
+{ config, lib, pkgs, ... }:
 {
   imports =
     [ 
