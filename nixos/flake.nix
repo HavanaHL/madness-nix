@@ -8,7 +8,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, nixpkgs, home-manager} @ inputs: {
+  outputs = { self, nixpkgs, home-manager } @ inputs: {
 
    nixosConfigurations = {
      "Cheshire" = nixpkgs.lib.nixosSystem {
@@ -20,6 +20,7 @@
 
    homeConfigurations = {
      "deive@Cheshire" = home-manager.lib.homeManagerConfiguration {
+       
        pkgs = nixpkgs.legacyPackages."x86_64-linux";
        modules = [ ./home.nix ];
      };

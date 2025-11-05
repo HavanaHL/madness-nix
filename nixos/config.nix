@@ -13,7 +13,7 @@
       ./gm/powerpills/cpu.nix
       ./gm/hw/swap.nix
       ./gm/powerpills/preload.nix
-      # ./gm/scy/dns.nix
+      ./gm/scy/dns.nix
       ./gm/ui/xfce.nix
       # ./gm/powerpills/overlays
     ];
@@ -29,7 +29,7 @@
     boot.tmp.useTmpfs = true;
 
   # Set kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   # Network
   networking.hostName = "Cheshire"; 
@@ -78,21 +78,6 @@
   security.polkit.enable = true;  
   services.seatd.enable = true;
 
-  # Cachix
-  nix.settings.substituters = [
-    # Mantenha os caches padrão
-    "https://cache.nixos.org/"
-    # Adicione o seu
-    "https://deive.cachix.org"
-  ];
-
-  nix.settings.trusted-public-keys = [
-    # Mantenha a chave padrão
-    "cache.nixos.org-1:6NCHdD59X431BVJoTDmd74GS/SjGlEv+XVNlfkWwSBY="
-    # Adicione a sua
-    "deive.cachix.org-1:deive.cachix.org-1:7qrB++2UlX2TzmooQoQEdIoIJXMeyotx6cq6JkdMukE="
-  ];
-  
   # System state 
   system.stateVersion = "25.05";
 }
