@@ -29,7 +29,7 @@
     boot.tmp.useTmpfs = true;
 
   # Set kernel.
-  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Network
   networking.hostName = "Cheshire"; 
