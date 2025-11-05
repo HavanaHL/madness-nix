@@ -13,7 +13,7 @@
       ./gm/powerpills/cpu.nix
       ./gm/hw/swap.nix
       ./gm/powerpills/preload.nix
-      ./gm/scy/dns.nix
+      # ./gm/scy/dns.nix
       ./gm/ui/xfce.nix
       # ./gm/powerpills/overlays
     ];
