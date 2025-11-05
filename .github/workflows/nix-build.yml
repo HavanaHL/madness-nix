@@ -18,4 +18,4 @@ jobs:
       - name: "Build"
         run: 
           nix build ./nixos#nixosConfigurations.Cheshire.config.system.build.toplevel
-          nix build .#homeConfigurations.deive@Cheshire.activationPackage
+          nix build ./nixos#homeConfigurations.deive@Cheshire.activationPackage
