@@ -34,7 +34,7 @@ jobs:
           # MUITO IMPORTANTE: 
           # Adapte este comando para o que você quer compilar.
           # Este é um exemplo comum para Flakes.
-          nix build .#nixosConfigurations.Cheshire.config.system.build.toplevel
+          nix build ./nixos#nixosConfigurations.Cheshire.config.system.build.toplevel
 
           # Se você tiver home-manager:
           # nix build .#homeConfigurations.NOME_DO_USUARIO@NOME_DO_SEU_HOST.activationPackage
