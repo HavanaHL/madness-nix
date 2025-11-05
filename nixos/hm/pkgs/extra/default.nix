@@ -2,6 +2,7 @@
 {
   imports = [./helix.nix];
   home.packages = with pkgs.xfce; [
+   # Components
    xfce4-panel
    xfce4-pulseaudio-plugin
    xfce4-whiskermenu-plugin

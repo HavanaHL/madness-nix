@@ -1,12 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{config, pkgs, lib, ...}:
 let
   kanaboxDefaultTheme = (
-    builtins.fromTOML (builtins.readFile "/home/deive/Modelos/Back/helix/themes/kanabox_viado.toml")
+    builtins.fromTOML (builtins.readFile ./kanabox_viado.toml)
   );
 in
 {
@@ -26,7 +21,6 @@ in
       language = [
         {
           name = "nix";
-          auto-format = false;
           formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
         }
       ];

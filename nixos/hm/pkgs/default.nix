@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
 
  # Internet
-   telegram-desktop
    equibop
    (vivaldi.override {proprietaryCodecs = true;})
    bitwarden-desktop
@@ -12,7 +11,6 @@
    smplayer
    mpv
    youtube-music
-   gpu-screen-recorder-gtk
    strawberry
    ffmpeg-full
    
@@ -34,8 +32,10 @@
    zellij
    
  # Text Editor
-   emacs-pgtk
-   
+   emacs-nox
+   nixd
+   nil
+
  # Graphics
    gimp3
    inkscape
@@ -46,8 +46,6 @@
    steam-run
    steam
    hydralauncher
-   wineWowPackages.stagingFull
-   winetricks
    
  # WM things
    fuzzel
@@ -59,6 +57,6 @@
    waybar   
   ];
 
-  imports = [ ./extra ./fonts ./busybox ];
+  imports = [ ./extra ./fonts ];
 
 }
