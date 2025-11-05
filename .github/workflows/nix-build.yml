@@ -1,0 +1,43 @@
+name: "Construir e enviar para o Cachix"
+
+on:
+  # Aciona em 'git push' para a branch 'main' ou 'master'
+  push:
+    branches:
+      - "main"
+      - "master"
+  # Aciona também em Pull Requests
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Pega seu código do repositório
+      - uses: actions/checkout@v4
+
+      # 2. Instala o Nix (com flakes e nix-command)
+      - uses: cachix/install-nix-action@v26
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
+      # 3. Conecta ao seu cache do Cachix usando o Secret
+      - uses: cachix/cachix-action@v14
+        with:
+          # MUITO IMPORTANTE: Mude para o nome do seu cache
+          name: "deive"
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+
+      # 4. Compila!
+      - name: "Compilar a configuração do NixOS"
+        run: |
+          # MUITO IMPORTANTE: 
+          # Adapte este comando para o que você quer compilar.
+          # Este é um exemplo comum para Flakes.
+          nix build .#nixosConfigurations.Cheshire.config.system.build.toplevel
+
+          # Se você tiver home-manager:
+          # nix build .#homeConfigurations.NOME_DO_USUARIO@NOME_DO_SEU_HOST.activationPackage
+
+          # O 'cachix-action' acima observa o 'nix build' e automaticamente 
+          # envia tudo que foi compilado para o seu cache.
