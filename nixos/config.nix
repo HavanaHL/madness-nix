@@ -78,6 +78,12 @@
   security.polkit.enable = true;  
   services.seatd.enable = true;
 
+  # Nix Limit
+  nix.settings = {
+    max-jobs = 2;
+    cores = 2;
+  };
+
   # System state 
   system.stateVersion = "25.05";
 }

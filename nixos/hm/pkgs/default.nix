@@ -13,6 +13,7 @@
    youtube-music
    strawberry
    ffmpeg-full
+   gpu-screen-recorder-gtk
    
  # Accessories
    ncpamixer
