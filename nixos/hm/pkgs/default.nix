@@ -8,6 +8,7 @@
    bitwarden-desktop
 
  # Media
+   telegram-desktop
    smplayer
    mpv
    youtube-music
@@ -56,6 +57,8 @@
    wl-clipboard-rs
    swappy
    waybar   
+   kdePackages.qt6ct
+   kdePackages.qt6gtk2
   ];
 
   imports = [ ./extra ./fonts ];

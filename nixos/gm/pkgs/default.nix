@@ -6,7 +6,6 @@
   # Sys
   ffmpeg
   wget
-  appimage-run
   mate.mate-polkit
   mesa
 
@@ -20,6 +19,8 @@
  programs.nano.enable = false;
  nix.package = pkgs.lixPackageSets.latest.lix; # Enable Lix
  nixpkgs.config.allowUnfree = true;
+ programs.appimage.enable = true;
+ programs.appimage.binfmt = true;
 
  # Imports
  imports = [ ./extra/flks.nix ./extra/thunar.nix];
