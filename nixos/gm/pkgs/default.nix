@@ -13,6 +13,16 @@
   playerctl
   wineWowPackages.staging
   winetricks
+  gpu-screen-recorder-gtk
+  
+  # Compile
+  clang
+  gcc
+  cmake
+  meson
+  ninja
+  llvm
+  lld
 ];
 
  # Pains
@@ -21,6 +31,9 @@
  nixpkgs.config.allowUnfree = true;
  programs.appimage.enable = true;
  programs.appimage.binfmt = true;
+ programs.gpu-screen-recorder = {
+  enable = true;
+ };
 
  # Imports
  imports = [ ./extra/flks.nix ./extra/thunar.nix];

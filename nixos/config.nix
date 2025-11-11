@@ -3,19 +3,16 @@
 {
   imports =
     [ 
-      ./gm/hw/hc.nix
-      ./gm/hw/vp.nix
+      ./gm/hw
       ./gm/pkgs
       ./gm/ui/wayf.nix      
       ./gm/fltp/fltp.nix
       ./gm/scy/doas.nix
-      ./gm/hw/pipewire.nix
       ./gm/powerpills/cpu.nix
-      ./gm/hw/swap.nix
       ./gm/powerpills/preload.nix
       ./gm/scy/dns.nix
-      ./gm/ui/xfce.nix
-      # ./gm/powerpills/overlays
+      # ./gm/ui/xfce.nix
+      ./gm/powerpills/overlays
     ];
 
   # Boot
@@ -38,6 +35,13 @@
 
   # Set time zone.
   time.timeZone = "America/Maceio";
+
+  # Display Manager
+  services.displayManager = {
+    enable = true;
+    ly.enable = true;
+    ly.x11Support = true;
+  };
 
   # Locales
   i18n.defaultLocale = "pt_BR.UTF-8";

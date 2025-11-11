@@ -6,6 +6,7 @@
    equibop
    (vivaldi.override {proprietaryCodecs = true;})
    bitwarden-desktop
+   legcord
 
  # Media
    telegram-desktop
@@ -14,7 +15,6 @@
    youtube-music
    strawberry
    ffmpeg-full
-   gpu-screen-recorder-gtk
    
  # Accessories
    ncpamixer
@@ -32,15 +32,19 @@
    i3status
    git
    zellij
-   
+   webkitgtk_6_0
+   wdisplays
+   yt-dlp
+   audacity
+
  # Text Editor
-   emacs-nox
    nixd
    nil
 
  # Graphics
    gimp3
    inkscape
+   nomacs-qt6
 
  # Games
    lutris
@@ -48,6 +52,10 @@
    steam-run
    steam
    hydralauncher
+   libglvnd
+   mesa-demos
+   libdrm
+   gamescope
    
  # WM things
    fuzzel

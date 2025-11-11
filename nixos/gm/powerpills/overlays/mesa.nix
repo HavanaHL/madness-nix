@@ -4,7 +4,7 @@ self: super: {
  # Overlay the Mesa package
  mesa = (super.mesa.override {
   # Customize
-  galliumDrivers = [ "crocus" "llvmpipe" "d3d12" ];
+  galliumDrivers = [ "crocus" "llvmpipe" ];
   vulkanDrivers = [ "intel" ];
   withValgrind = false;
 }).overrideAttrs (prevAttrs: {
@@ -21,10 +21,10 @@ self: super: {
     # Compile Options
     (super.lib.mesonBool "gallium-rusticl" false)
     (super.lib.mesonBool "gallium-extra-hud" false)
-    (super.lib.mesonBool "install-mesa-clc" true)
+    (super.lib.mesonBool "install-mesa-clc" false)
     (super.lib.mesonBool "install-precomp-compiler" false)
     # Hardware Acceleration
-    (super.lib.mesonEnable "gallium-va" true)
+    (super.lib.mesonEnable "gallium-va" false)
     (super.lib.mesonEnable "gallium-vdpau" false)
 
   ];
