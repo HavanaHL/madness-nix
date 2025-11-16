@@ -6,7 +6,7 @@
    equibop
    (vivaldi.override {proprietaryCodecs = true;})
    bitwarden-desktop
-   legcord
+   freetube
 
  # Media
    telegram-desktop
@@ -17,26 +17,27 @@
    ffmpeg-full
    
  # Accessories
+   tldr
    ncpamixer
-   dunst
    libnotify
    peazip
    unrar
    unzip
-   htop
-   btop
    pavucontrol
    playerctl
    alacritty
    xarchiver
-   i3status
    git
    zellij
-   webkitgtk_6_0
    wdisplays
    yt-dlp
    audacity
 
+ # System
+   nix-output-monitor
+   htop
+   btop
+    
  # Text Editor
    nixd
    nil
@@ -55,7 +56,6 @@
    libglvnd
    mesa-demos
    libdrm
-   gamescope
    
  # WM things
    fuzzel
@@ -67,8 +67,8 @@
    waybar   
    kdePackages.qt6ct
    kdePackages.qt6gtk2
+   dunst
   ];
 
   imports = [ ./extra ./fonts ];
-
 }

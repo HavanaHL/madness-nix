@@ -1,12 +1,20 @@
-{config, pkgs, ...}: {
+{config, pkgs, ...}:
+{
 
-programs.zsh = {
- enable = true;
+ programs.zsh = {
+  enable = true;
   enableCompletion = true;
-   initContent = "export PROMPT='%~ λ '
-    export NH_FLAKE=/etc/nixos
-    export GSK_RENDERER=ngl
-    export QT_QPA_PLATFORMTHEME=qt6ct";
-};
+  history = {
+    size = 5000;
+    share = true;
+    save = 5000;
+    };
+  initContent = " export PROMPT='%~ λ ' ";
+  shellAliases = {
+    nx = "doas nixos-rebuild switch --flake path:/etc/nixos#Cheshire |& nom";
+    hm = "home-manager switch --flake path:/etc/nixos#deive@Cheshire |& nom";
+    fx = "nix flake update --flake /etc/nixos";
+    };
+  };
 
 }

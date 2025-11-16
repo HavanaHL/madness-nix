@@ -26,8 +26,8 @@
     boot.tmp.useTmpfs = true;
 
   # Set kernel.
-  boot.kernelPackages = pkgs.linuxPackages_xanmod;
-
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-lts;
+  
   # Network
   networking.hostName = "Cheshire"; 
   networking.wireless.iwd.enable = true;

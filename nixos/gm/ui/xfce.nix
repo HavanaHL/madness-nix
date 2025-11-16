@@ -1,16 +1,8 @@
 {config, ...}:
 {
-  services.displayManager.ly = {
-    enable = true;
-    x11Support = true;
-  };
   services.xserver.desktopManager.xfce = {
     enable = true;
     enableWaylandSession = true;
-    waylandSessionCompositor = "labwc";
-  };
-  services.xserver = {
-    enable = true;
-    displayManager.lightdm.enable = false;
+    waylandSessionCompositor = "wayfire -c /home/deive/.config/xfce.ini";
   };
 }

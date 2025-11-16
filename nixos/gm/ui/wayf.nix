@@ -6,7 +6,6 @@
   plugins = with pkgs.wayfirePlugins; [
     wcm
     wayfire-plugins-extra
-    windecor
     ];
   }; 
 }

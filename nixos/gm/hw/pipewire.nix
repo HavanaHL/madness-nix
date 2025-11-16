@@ -8,7 +8,6 @@
 };
 
  services.pulseaudio.enable = false;
- hardware.firmware = [pkgs.sof-firmware];
  security.rtkit.enable = true;
 
 }
