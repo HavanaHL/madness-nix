@@ -4,7 +4,7 @@ self: super: {
  # Overlay the Mesa package
  mesa = (super.mesa.override {
   # Customize
-  galliumDrivers = [ "crocus" "llvmpipe" ];
+  galliumDrivers = [ "crocus" "llvmpipe" "i915" ];
   vulkanDrivers = [ "intel" ];
   withValgrind = false;
 }).overrideAttrs (prevAttrs: {

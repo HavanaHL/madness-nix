@@ -26,6 +26,7 @@
 ];
 
  # Pains
+ programs.xfconf.enable = true;
  programs.nano.enable = false;
  nix.package = pkgs.lixPackageSets.latest.lix; # Enable Lix
  nixpkgs.config.allowUnfree = true;

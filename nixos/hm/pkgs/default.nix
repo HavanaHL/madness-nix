@@ -7,6 +7,9 @@
    (vivaldi.override {proprietaryCodecs = true;})
    bitwarden-desktop
    freetube
+   legcord
+   webkitgtk_6_0
+   chromium
 
  # Media
    telegram-desktop
@@ -15,23 +18,26 @@
    youtube-music
    strawberry
    ffmpeg-full
-   
- # Accessories
+   xfce.ristretto
+
+ # Utils
+   busybox
    tldr
-   ncpamixer
    libnotify
-   peazip
+   wdisplays
+   yt-dlp
    unrar
    unzip
+   peazip
+
+   # Accessories
+   ncpamixer
    pavucontrol
    playerctl
    alacritty
-   xarchiver
    git
    zellij
-   wdisplays
-   yt-dlp
-   audacity
+   nwg-look
 
  # System
    nix-output-monitor
@@ -45,7 +51,8 @@
  # Graphics
    gimp3
    inkscape
-   nomacs-qt6
+   audacity
+
 
  # Games
    lutris

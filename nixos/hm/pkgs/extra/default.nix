@@ -12,7 +12,6 @@
   # Plus
     programs.nh.enable = true;
     programs.nh.flake = "/etc/nixos";
-    programs.xfconf.enable = true;
     imports = [ ./helix.nix ];
 
 }

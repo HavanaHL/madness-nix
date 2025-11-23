@@ -8,6 +8,6 @@
   SDL_VIDEODRIVER = "wayland";
   # Other
   NIXOS_OZONE_WL = "1";   
-  GSK_RENDERER = "ngl";
+  GSK_RENDERER = "gl";
  };
 }
