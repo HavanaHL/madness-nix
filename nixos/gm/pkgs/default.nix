@@ -11,7 +11,8 @@
 
   # Audio
   playerctl
-  wineWowPackages.staging
+  wineWowPackages.wayland
+  # wineWowPackages.staging
   winetricks
   gpu-screen-recorder-gtk
   
